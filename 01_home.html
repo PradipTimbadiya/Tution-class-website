@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathrix E-learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
+        </script>
+    <script src="jquery.js"></script>
+</head>
+<script>
+    $(document).ready(() => {
+        let xhr = new XMLHttpRequest;
+        xhr.open("GET", "home.json", true);
+        xhr.onload = () => {
+            if (xhr.status == 200) {
+                let objResponse = JSON.parse(xhr.response);
+                $("#ex1").append(
+                    `
+                    <img src="${objResponse.pic1}">
+                    `
+                )
+                $("#ex2").append(
+                    `
+                        <img src="${objResponse.pic2}" >
+                        `
+                )
+                $("#ex3").append(
+                    `
+                        <img src="${objResponse.pic3}" >
+                        `
+                )
+                $("#ex4").append(
+                    `
+                        <img src="${objResponse.pic4}" >
+                        `
+                )
+                $("#ex5").append(
+                    `
+                        <img src="${objResponse.pic5}" >
+                        `
+                )
+                $("#ex6").append(
+                    `
+                        <img src="${objResponse.pic6}" >
+                        `
+                )
+            }
+        }
+        xhr.send()
+    })
+    //     $.ajax({
+    //         method: "GET",
+    //         url: "home.json",
+    //         dataType: "json",
+    //         success: function (res) {
+    //             for (let i = 0; i < res.length; i++) {
+    //                 $("#ex1").append(
+    //                     `
+    //                     <img src="${res[i].pic1}" >
+    //                     `
+    //                 )
+    //                 $("#ex2").append(
+    //                     `
+    //                     <img src="${res[i].pic2}" >
+    //                     `
+    //                 )
+    //                 $("#ex3").append(
+    //                     `
+    //                     <img src="${res[i].pic3}" >
+    //                     `
+    //                 )
+    //                 $("#ex4").append(
+    //                     `
+    //                     <img src="${res[i].pic4}" >
+    //                     `
+    //                 )
+    //                 $("#ex5").append(
+    //                     `
+    //                     <img src="${res[i].pic5}" >
+    //                     `
+    //                 )
+    //                 $("#ex6").append(
+    //                     `
+    //                     <img src="${res[i].pic6}" >
+    //                     `
+    //                 )
+    //             }
+    //         }
+    //     })
+    // })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: "home.xml",
+            dataType: "xml",
+            success: abc
+        })
+    })
+    function abc(xml) {
+        $(xml).find("data").each(function () {
+            let heading1 = $(this).find("dh1").text();
+            let heading2 = $(this).find("dh2").text();
+            let heading3 = $(this).find("dh3").text();
+            let heading4 = $(this).find("dh4").text();
+            let heading5 = $(this).find("dh5").text();
+            let heading6 = $(this).find("dh6").text();
+            $("#head1").append(
+                `
+                    <h6>${heading1}</h6>
+                `
+            )
+            $("#head2").append(
+                `
+                    <h6>${heading2}</h6>
+                `
+            )
+            $("#head3").append(
+                `
+                    <h6>${heading3}</h6>
+                `
+            )
+            $("#head4").append(
+                `
+                    <h6>${heading4}</h6>
+                `
+            )
+            $("#head5").append(
+                `
+                    <h6>${heading5}</h6>
+                `
+            )
+            $("#head6").append(
+                `
+                    <h6>${heading6}</h6>
+                `
+            )
+        })
+    }
+            //         let pg1 = $(this).find(dh1).text();
+            //
+            //     }
+            //     xhr.send()
+            // }
+</script>
+
+<body>
+    <nav>
+        <img src="Logo.png" alt="">
+        <!-- <img src="images/logo.svg" alt=""> -->
+        <div class="navigation">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="02_about.html">About</a></li>
+                <li><a href="03_blog.html">Blog</a></li>
+                <li><a href="04_course.html">Courses</a></li>
+                <li><a href="05_contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home">
+        <h2>bright your future with Mathrix</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis at dolore perferendis, sunt, magni enim
+            culpa, placeat blanditiis deleniti aspernatur facere quo vero earum quasi?</p>
+        <div class="btn">
+            <a href="#" class="blue">Learn More</a>
+            <a href="#" class="yellow">Visit Courses</a>
+        </div>
+        <!-- <div class="chaticon">
+            <a href="08_T&C.html"><i class="fa fa-comments" aria-hidden="true"></i></a>
+        </div> -->
+    </section>
+
+    <sectiom id="features">
+        <h1>Awesome Features</h1>
+        <p>Replenish man have thing gathering lights yielding shall you</p>
+        <div class="fea-base">
+            <div class="fea-box">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <h3>Scholarship Facility</h3>
+                <p>One make creepath, man bearing theira firmament won't grate heaven</p>
+            </div>
+            <div class="fea-box">
+                <i class="fa fa-file" aria-hidden="true"></i>
+                <h3>Dell Online Course</h3>
+                <p>One make creepath, man bearing theira firmament won't grate heaven</p>
+            </div>
+            <div class="fea-box">
+                <i class="fa fa-award" aria-hidden="true"></i>
+                <h3>Global certification</h3>
+                <p>One make creepath, man bearing theira firmament won't grate heaven</p>
+            </div>
+        </div>
+    </sectiom>
+
+    <section id="course">
+        <h1>Our Popular Courses</h1>
+        <p>Replenish man have thing gathering lights yielding shall you</p>
+        <div class="course-box">
+            <div class="courses">
+                <div id="ex1"></div>
+                <div class="details">
+                    <span>Updated 21/1/2022</span>
+                    <h6 id="head1"></h6>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(240)</span>
+                    </div>
+                </div>
+                <div class="cost">
+                    ₹ 750/-
+                </div>
+            </div>
+            <div class="courses">
+                <div id="ex2"></div>
+                <div class="details">
+                    <span>Updated 21/1/2022</span>
+                    <h6 id="head2"></h6>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(196)</span>
+                    </div>
+                </div>
+                <div class="cost">
+                    ₹ 650/-
+                </div>
+            </div>
+            <div class="courses">
+                <div id="ex3"></div>
+                <div class="details">
+                    <span>Updated 21/1/2022</span>
+                    <h6 id="head3"></h6>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(236)</span>
+                    </div>
+                </div>
+                <div class="cost">
+                    ₹ 1250/-
+                </div>
+            </div>
+            <div class="courses">
+                <div id="ex4"></div>
+                <div class="details">
+                    <span>Updated 21/1/2022</span>
+                    <h6 id="head4"></h6>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(563)</span>
+                    </div>
+                </div>
+                <div class="cost">
+                    ₹ 450/-
+                </div>
+            </div>
+            <div class="courses">
+                <div id="ex5"></div>
+                <div class="details">
+                    <span>Updated 21/1/2022</span>
+                    <h6 id="head5"></h6>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(124)</span>
+                    </div>
+                </div>
+                <div class="cost">
+                    ₹ 999/-
+                </div>
+            </div>
+            <div class="courses">
+                <div id="ex6"></div>
+                <div class="details">
+                    <span>Updated 21/1/2022</span>
+                    <h6 id="head6"></h6>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(752)</span>
+                    </div>
+                </div>
+                <div class="cost">
+                    ₹ 399/-
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration">
+        <div class="remainder">
+            <p>Get 100 Online Courses for Free</p>
+            <h1>Register To Get It</h1>
+            <div class="time">
+                <div class="date">
+                    18 <br> Days
+                </div>
+                <div class="date">
+                    23 <br> Hours
+                </div>
+                <div class="date">
+                    06 <br> Minutes
+                </div>
+                <div class="date">
+                    25 <br> Seconds
+                </div>
+            </div>
+        </div>
+
+        <form action="action.php" class="form">
+            <h3>Create Free Account Now!</h3>
+            <input type="text" placeholder="Name" name="" id="username">
+            <div id="ShowError1"></div>
+
+            <input type="email" placeholder="E-mail Address" name="" id="email">
+            <div id="ShowError2"></div>
+
+            <input type="text" placeholder="Phone Number" name="" id="phonenumber" maxlength="10">
+            <div id="ShowError3"></div>
+
+            <div class="btn">
+                <!-- <a href="#" class="yellow" id="Submit">Submit Form</a> -->
+                <button type="submit" class="yellow" id="Submit">Submit Form</button>
+        </form>
+    </section>
+
+    <section id="experts">
+        <h1>Community Experts</h1>
+        <p>Replenish man have thing gathering lights yieling shall you</p>
+        <div class="expert-box">
+            <div class="profile">
+                <img src="images/pro1.webp" alt="">
+                <h6>Ema Irnik</h6>
+                <p>Python & Algorithm Expert</p>
+                <div class="pro-links">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="profile">
+                <img src="images/pro2.webp" alt="">
+                <h6>Jason</h6>
+                <p>Data Analysis Expert</p>
+                <div class="pro-links">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="profile">
+                <img src="images/pro3.webp" alt="">
+                <h6>Maalik</h6>
+                <p>Full Stack Developer</p>
+                <div class="pro-links">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="profile">
+                <img src="images/pro4.webp" alt="">
+                <h6>Jennifer</h6>
+                <p>Design Expert</p>
+                <div class="pro-links">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Website</li>
+            <li>Marketing Service</li>
+        </div>
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <li>About</li>
+            <li>Blog</li>
+            <li>Course</li>
+            <li>Contact</li>
+        </div>
+        <div class="footer-col">
+            <h3>Features</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Website</li>
+            <li>Marketing Service</li>
+        </div>
+        <div class="footer-col">
+            <h3>Resources</h3>
+            <li>Guides</li>
+            <li>Research</li>
+            <li>Experts</li>
+            <li>Marketing Service</li>
+        </div>
+
+
+        <div class="footer-col">
+            <h3>Newsletter </h3>
+            <p>You can trust us. we only send promo offers, </p>
+            <div class="subscribe">
+                <input type="text" placeholder="Your E-mail address">
+                <a href="#" class="yellow">SUBSCRIBE</a>
+            </div>
+        </div>
+
+        <div class="tac">
+            <h4>Terms & Conditions</h4>
+            <a href="#">Click Here To show</a>
+        </div>
+
+        <div class="copyright">
+            <p>copyright &copy;2021 All rights reserved | Made By <span>Karan Unagar</span></p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
